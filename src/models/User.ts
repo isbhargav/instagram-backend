@@ -21,6 +21,7 @@ export interface IUser extends Document {
   createdAt?: Date;
   getJwtToken: () => string;
   checkPassword: (password: string) => Promise<boolean>;
+  isFollowing?: boolean;
 }
 
 const UserSchema: Schema = new mongoose.Schema({
