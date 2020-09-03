@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
-// import jwt from "jsonwebtoken";
-// import argon2 from "argon2";
+import jwt from "jsonwebtoken";
+import argon2 from "argon2";
 import { IPost } from "./Post";
 
 export interface IUser extends Document {
@@ -13,10 +13,14 @@ export interface IUser extends Document {
   website?: string;
   followers?: [IUser["_id"]];
   followersCount?: number;
+  following?: [IUser["_id"]];
+  followingCount?: number;
   posts?: [IPost["_id"]];
   postCount?: number;
   savedPosts?: [IPost["_id"]];
   createdAt?: Date;
+  getJwtToken: () => string;
+  checkPassword: (password: string) => Promise<boolean>;
 }
 
 const UserSchema: Schema = new mongoose.Schema({
@@ -56,6 +60,11 @@ const UserSchema: Schema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  following: [{ type: Schema.Types.ObjectId }],
+  followingCount: {
+    type: Number,
+    default: 0,
+  },
   posts: [{ type: Schema.Types.ObjectId }],
   postCount: {
     type: Number,
@@ -67,6 +76,19 @@ const UserSchema: Schema = new mongoose.Schema({
     default: Date.now(),
   },
 });
+UserSchema.pre<IUser>("save", async function (next) {
+  const hashedPassword = await argon2.hash(this.password);
+  this.password = hashedPassword;
+  next();
+});
+UserSchema.methods.getJwtToken = function () {
+  return jwt.sign({ id: this._id }, "blowfish", {
+    expiresIn: 1000 * 60 * 60 * 24 * 3,
+  });
+};
+UserSchema.methods.checkPassword = async function (password: string) {
+  return argon2.verify(this.password, password);
+};
 
 const User = mongoose.model<IUser>("User", UserSchema);
 export default User;
