@@ -82,7 +82,7 @@ UserSchema.pre<IUser>("save", async function (next) {
   next();
 });
 UserSchema.methods.getJwtToken = function () {
-  return jwt.sign({ id: this._id }, "blowfish", {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET!!, {
     expiresIn: 1000 * 60 * 60 * 24 * 3,
   });
 };
