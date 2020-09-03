@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import User from "../models/User";
+import { authRequest } from "../types";
 
 export const signup = async (
   req: Request,
@@ -56,4 +57,13 @@ export const login = async (
 
   // then send json web token as response
   res.status(200).json({ success: true, token });
+};
+
+export const me = async (req: authRequest, res: Response, _: NextFunction) => {
+  const { avatar, username, fullname, email, _id, website, bio } = req.user!!;
+
+  res.status(200).json({
+    success: true,
+    data: { avatar, username, fullname, email, _id, website, bio },
+  });
 };
