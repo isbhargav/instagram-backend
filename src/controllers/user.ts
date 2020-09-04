@@ -170,3 +170,34 @@ export const unfollow = async (
     return next({ message: "You are already following him", status: 400 });
   }
 };
+
+export const editUser = async (
+  req: authRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  // get data
+  const { fullname, username, email, website, bio, avatar } = req.body;
+
+  let newDetails: IUser = req.user!!;
+  if (fullname) newDetails.fullname = fullname;
+  if (username) newDetails.username = username;
+  if (email) newDetails.email = email;
+  if (website) newDetails.website = website;
+  if (bio) newDetails.bio = bio;
+  if (avatar) newDetails.avatar = avatar;
+
+  try {
+    const user = await User.findByIdAndUpdate(
+      req.user?.id,
+      { $set: { ...newDetails } },
+      {
+        new: true,
+        runValidators: true,
+      }
+    ).select("fullname username email website bio avatar");
+    res.status(200).json({ success: true, data: user });
+  } catch (err) {
+    next(err);
+  }
+};

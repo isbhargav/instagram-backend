@@ -6,13 +6,15 @@ import {
   searchUser,
   follow,
   unfollow,
+  editUser,
 } from "../controllers/user";
 const userRouter = Router();
 
 // Get users
 userRouter.get("/", protect, getUsers);
+userRouter.put("/", protect, editUser);
 userRouter.get("/:username", protect, getUser);
-userRouter.get("/search", protect, searchUser);
+userRouter.get("/search", searchUser);
 userRouter.get("/:id/follow", protect, follow);
 userRouter.get("/:id/unfollow", protect, unfollow);
 

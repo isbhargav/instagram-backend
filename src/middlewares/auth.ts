@@ -32,6 +32,7 @@ export const protect = async (
       return next({ message: `No user found for ID ${decoded.id}` });
     }
 
+    //attach user to request
     req.user = user;
     next();
   } catch (err) {
