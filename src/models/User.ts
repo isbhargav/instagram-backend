@@ -56,22 +56,22 @@ const UserSchema: Schema = new mongoose.Schema({
   },
   bio: String,
   website: String,
-  followers: [{ type: Schema.Types.ObjectId }],
+  followers: [{ type: Schema.Types.ObjectId, ref: "User" }],
   followersCount: {
     type: Number,
     default: 0,
   },
-  following: [{ type: Schema.Types.ObjectId }],
+  following: [{ type: Schema.Types.ObjectId, ref: "User" }],
   followingCount: {
     type: Number,
     default: 0,
   },
-  posts: [{ type: Schema.Types.ObjectId }],
+  posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
   postCount: {
     type: Number,
     default: 0,
   },
-  savedPosts: [{ type: Schema.Types.ObjectId }],
+  savedPosts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
   createdAt: {
     type: Date,
     default: Date.now(),
@@ -91,5 +91,4 @@ UserSchema.methods.checkPassword = async function (password: string) {
   return argon2.verify(this.password, password);
 };
 
-const User = mongoose.model<IUser>("User", UserSchema);
-export default User;
+export const User = mongoose.model<IUser>("User", UserSchema);

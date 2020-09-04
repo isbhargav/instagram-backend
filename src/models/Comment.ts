@@ -7,16 +7,19 @@ export interface IComment extends Document {
   post: IPost["_id"];
   text: string;
   createdAt?: Date;
+  isCommentMine?: boolean;
 }
 
 const CommentSchema: Schema = new mongoose.Schema({
   user: {
     type: Schema.Types.ObjectId,
     required: true,
+    ref: "User",
   },
   post: {
     type: Schema.Types.ObjectId,
     required: true,
+    ref: "Post",
   },
 
   text: {

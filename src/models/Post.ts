@@ -12,12 +12,16 @@ export interface IPost extends Document {
   comments?: [IComment["_id"]];
   commentsCount?: number;
   createdAt?: Date;
+  isLiked?: boolean;
+  isSaved?: boolean;
+  isMine?: boolean;
 }
 
 const PostSchema: Schema = new mongoose.Schema({
   user: {
     type: Schema.Types.ObjectId,
     required: true,
+    ref: "User",
   },
   caption: {
     type: String,
@@ -30,12 +34,12 @@ const PostSchema: Schema = new mongoose.Schema({
     type: [String],
     validate: (v: string[]) => v === null || v.length > 0,
   },
-  likes: [{ type: Schema.Types.ObjectId }],
+  likes: [{ type: Schema.Types.ObjectId, ref: "User" }],
   likeCount: {
     type: Number,
     default: 0,
   },
-  comments: [{ type: Schema.Types.ObjectId }],
+  comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
   commentsCount: {
     type: Number,
     default: 0,
@@ -46,5 +50,4 @@ const PostSchema: Schema = new mongoose.Schema({
   },
 });
 
-const Post = mongoose.model<IPost>("Post", PostSchema);
-export default Post;
+export const Post = mongoose.model<IPost>("Post", PostSchema);
