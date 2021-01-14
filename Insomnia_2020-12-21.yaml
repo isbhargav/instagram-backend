@@ -1,0 +1,399 @@
+_type: export
+__export_format: 4
+__export_date: 2020-12-21T21:38:37.642Z
+__export_source: insomnia.desktop.app:v2020.4.0
+resources:
+  - _id: req_504f6e1f48124ae1855abdd3ba7f9318
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599333592299
+    created: 1599333507654
+    url: http://localhost:5000/post/5f52db20fc326615f58f9695/comment
+    name: addCommnet
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"text":"Nice Picture "
+        }
+    parameters: []
+    headers:
+      - id: pair_1f11d6ff691946389f4591a534a79b7c
+        name: Content-Type
+        value: application/json
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTMzMzIwOSwiZXhwIjoxODU4NTMzMjA5fQ.zauYuFEl5klnn1BQ8u1CNx0xFbwueTPAHIpLCegcMCU
+      type: bearer
+    metaSortKey: -1599333507654
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_18f0c38a4c7548208cc521920f6f3564
+    parentId: null
+    modified: 1599150292572
+    created: 1599150292572
+    name: Insomnia
+    description: ""
+    scope: null
+    _type: workspace
+  - _id: req_66e19ffa8fbf405582c7e3aac24d3441
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599333460680
+    created: 1599332938779
+    url: http://localhost:5000/post/5f52db20fc326615f58f9695/find
+    name: searchPost id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTMzMzIwOSwiZXhwIjoxODU4NTMzMjA5fQ.zauYuFEl5klnn1BQ8u1CNx0xFbwueTPAHIpLCegcMCU
+      type: bearer
+    metaSortKey: -1599332766458
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_575437832fc44fcab7afd808fa24b254
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599332916548
+    created: 1599332766408
+    url: http://localhost:5000/post/search
+    name: searchPost tag/caption
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_7f6715c3966f47dc8d72bb63aec22b66
+        name: tag
+        value: "#cute"
+    headers: []
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTI0NTcyNCwiZXhwIjoxODU4NDQ1NzI0fQ.Wtybo3ndLD3FtNh9_QyHgyjx9VXx7i7jJ0sNrwjyPxs
+      type: bearer
+    metaSortKey: -1599332766408
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1c93f0c5a3d940dbb42b06058c3081bc
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599265859604
+    created: 1599265850388
+    url: http://localhost:5000/post/
+    name: getPosts
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1599265850388
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_bc65858274994c62b599007f3168a70a
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599265566374
+    created: 1599184086847
+    url: http://localhost:5000/post/
+    name: create Post
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+        	"caption":"Dog Picture",
+        	 "files":"https://www.google.com/imgres?imgurl=https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod.s3.amazonaws.com%2Fimages%2Fdog-puppy-on-garden-royalty-free-image-1586966191.jpg%3Fcrop%3D1.00xw%3A0.669xh%3B0%2C0.190xh%26resize%3D1200%3A*&imgrefurl=https%3A%2F%2Fwww.goodhousekeeping.com%2Flife%2Fpets%2Fg4531%2Fcutest-dog-breeds%2F&tbnid=wzRcY9R2ANhK-M&vet=12ahUKEwjih9m3sc7rAhXUUM0KHTlYADkQMygAegUIARDQAQ..i&docid=2r6Arj4-hBjhNM&w=1200&h=602&q=dog%20pictures&ved=2ahUKEwjih9m3sc7rAhXUUM0KHTlYADkQMygAegUIARDQAQ",
+        	 "tags":["#cute","#puppy"]
+        }
+    parameters: []
+    headers:
+      - id: pair_d919b5d9c1d34260bc1d7f5bd200c3f0
+        name: Content-Type
+        value: application/json
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTI0NTcyNCwiZXhwIjoxODU4NDQ1NzI0fQ.Wtybo3ndLD3FtNh9_QyHgyjx9VXx7i7jJ0sNrwjyPxs
+      type: bearer
+    metaSortKey: -1599184086847
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9cb07b87288e4390a849460682d3491a
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599247421462
+    created: 1599184965467
+    url: http://localhost:5000/users/feed
+    name: feed
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTI0NTcyNCwiZXhwIjoxODU4NDQ1NzI0fQ.Wtybo3ndLD3FtNh9_QyHgyjx9VXx7i7jJ0sNrwjyPxs
+      type: bearer
+    metaSortKey: -1599150309853.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e3f308cb06a64e08b6adb5be48e16612
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599245908235
+    created: 1599245271185
+    url: http://localhost:5000/users/5f5121b782b6d04f5f6062ed/unfollow
+    name: unfollow
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTI0NTcyNCwiZXhwIjoxODU4NDQ1NzI0fQ.Wtybo3ndLD3FtNh9_QyHgyjx9VXx7i7jJ0sNrwjyPxs
+      type: bearer
+    metaSortKey: -1599150309853.1094
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c0258d634cf34c38ada589e68671b70e
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599245883053
+    created: 1599225596111
+    url: http://localhost:5000/users/5f5121b782b6d04f5f6062ed/follow
+    name: follow
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTI0NTcyNCwiZXhwIjoxODU4NDQ1NzI0fQ.Wtybo3ndLD3FtNh9_QyHgyjx9VXx7i7jJ0sNrwjyPxs
+      type: bearer
+    metaSortKey: -1599150309852.7188
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_f3991c87ae2c43e383a7b5fd4b126195
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599247654339
+    created: 1599244937181
+    url: http://localhost:5000/users/search
+    name: search
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_0993a3a13be444a69c0217412645451a
+        name: username
+        value: testuser1
+    headers: []
+    authentication: {}
+    metaSortKey: -1599150309851.9375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5e846f10850743b69e96c0097e23405d
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599245740284
+    created: 1599184709743
+    url: http://localhost:5000/users/testuser1
+    name: user
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTI0NTcyNCwiZXhwIjoxODU4NDQ1NzI0fQ.Wtybo3ndLD3FtNh9_QyHgyjx9VXx7i7jJ0sNrwjyPxs
+      type: bearer
+    metaSortKey: -1599150309850.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_11ae2babfec740e19879a1b6b810978c
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599226130066
+    created: 1599150309891
+    url: http://localhost:5000/users
+    name: users
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTIyNjA3MCwiZXhwIjoxODU4NDI2MDcwfQ.MPrROAWykE6I0rEnQHzsWQIjbvVfvZSMOEvaWJTIT-s
+      type: bearer
+    metaSortKey: -1599150309847.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_53b26b5c28a94839aa0d1d854353b097
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599245755742
+    created: 1599165838176
+    url: http://localhost:5000/auth/me
+    name: me
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTI0MGMzZmFhOGQ4MDg2ZTk4YmRmNCIsImlhdCI6MTU5OTI0NTcyNCwiZXhwIjoxODU4NDQ1NzI0fQ.Wtybo3ndLD3FtNh9_QyHgyjx9VXx7i7jJ0sNrwjyPxs
+      type: bearer
+    metaSortKey: -1599150309841
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e93846fa1b70446e9a70534736bfb564
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599226069031
+    created: 1599156465047
+    url: http://localhost:5000/auth/login
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"email":"testuser1@gmail.com",
+        	"password":"testuser1"
+        }
+    parameters: []
+    headers:
+      - id: pair_d8dd4ad47d5b410c804baee3d686ca9f
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1599150309828.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d87ce73c59e54134bc39aca0e1d16a0a
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599226048853
+    created: 1599162134389
+    url: http://localhost:5000/auth/signup
+    name: register
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"fullname":"testuser1",
+        	"username":"testuser1",
+        	"email":"testuser1@gmail.com",
+        	"password":"testuser1"
+        }
+    parameters: []
+    headers:
+      - id: pair_efbcaeafd31c4276b0d27f27eaf0f159
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1599150309803.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_a6bebc49adc8de2fb5e006c5a967e6b3bd2397ce
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599150292674
+    created: 1599150292674
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1599150292674
+    _type: environment
+  - _id: jar_a6bebc49adc8de2fb5e006c5a967e6b3bd2397ce
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599183858240
+    created: 1599150292678
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_6fba9b36b87a479a91af6549b41f5c03
+    parentId: wrk_18f0c38a4c7548208cc521920f6f3564
+    modified: 1599150292577
+    created: 1599150292577
+    fileName: Insomnia
+    contents: ""
+    contentType: yaml
+    _type: api_spec
