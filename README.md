@@ -7,6 +7,9 @@ REST services with functionalites similar to Instagram
 - Nodejs
 - Express
 - Typescript 
+- mongodb
+- mongoose
+- JWT
 
 # Database Design 
 
