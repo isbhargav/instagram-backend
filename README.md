@@ -13,6 +13,7 @@ REST services with functionalites similar to Instagram
 ![database](db_diagram.png)
 
 # Endpoints
-![endpints](api_ends.png)
+
+![endponts](/api_ends.png)
 
 Link to insomia backup file : [backup](Insomnia_2020-12-21.yaml)
